@@ -1,0 +1,28 @@
+package com.demo.registry.registry;
+
+import com.demo.registry.service.HelloService;
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
+import org.springframework.beans.factory.support.BeanDefinitionBuilder;
+import org.springframework.beans.factory.support.BeanDefinitionRegistry;
+import org.springframework.beans.factory.support.BeanDefinitionRegistryPostProcessor;
+import org.springframework.stereotype.Component;
+
+/**
+ * @Description
+ * @Author wuyupeng
+ * @Date 2019/10/11 15:27
+ **/
+@Component
+public class MyBeanDefinitionRegistryPostProcessor implements BeanDefinitionRegistryPostProcessor {
+    @Override
+    public void postProcessBeanDefinitionRegistry(BeanDefinitionRegistry registry) throws BeansException {
+        BeanDefinitionBuilder builder = BeanDefinitionBuilder.genericBeanDefinition(HelloService.class);
+        registry.registerBeanDefinition("helloService",builder.getBeanDefinition());
+    }
+
+    @Override
+    public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
+        // do nothing
+    }
+}
