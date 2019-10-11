@@ -15,8 +15,15 @@ import org.springframework.stereotype.Component;
  **/
 @Component
 public class MyBeanDefinitionRegistryPostProcessor implements BeanDefinitionRegistryPostProcessor {
+
     @Override
     public void postProcessBeanDefinitionRegistry(BeanDefinitionRegistry registry) throws BeansException {
+        /**
+         * 这里只是简单演示一下BeanDefinitionRegistryPostProcessor的动态注册bean的功能。
+         *
+         * 实际上我们在使用java config或者SpringBoot环境下很少直接自定义BeanDefinitionRegistryPostProcessor，
+         * 而是结合使用@Import来实现动态注册Bean。可以参考spring-import-demo模块
+         */
         BeanDefinitionBuilder builder = BeanDefinitionBuilder.genericBeanDefinition(HelloService.class);
         registry.registerBeanDefinition("helloService",builder.getBeanDefinition());
     }
