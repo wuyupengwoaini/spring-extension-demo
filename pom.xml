@@ -9,6 +9,7 @@
         <module>spring-registry-demo</module>
         <module>spring-import-demo</module>
         <module>spring-bpp-demo</module>
+        <module>spring-namespace-demo</module>
     </modules>
     <groupId>com.example</groupId>
     <artifactId>spring-extension-demo</artifactId>

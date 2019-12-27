@@ -9,6 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring-registry-demo</artifactId>
+    <artifactId>spring-namespace-demo</artifactId>
+
 
 </project>
